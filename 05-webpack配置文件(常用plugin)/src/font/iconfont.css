@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3162378 */
+  src: url('iconfont.woff2?t=1643165677056') format('woff2'),
+       url('iconfont.woff?t=1643165677056') format('woff'),
+       url('iconfont.ttf?t=1643165677056') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xunzhang:before {
+  content: "\ecb1";
+}
+
+.icon-lianjie:before {
+  content: "\ecb2";
+}
+
+.icon-tianqi:before {
+  content: "\ecb3";
+}
+
+.icon-baocun:before {
+  content: "\ecb4";
+}
+

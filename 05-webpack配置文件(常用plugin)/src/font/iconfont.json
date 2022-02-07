@@ -1,0 +1,37 @@
+{
+  "id": "3162378",
+  "name": "webpack_test_font",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "20384537",
+      "name": "勋章",
+      "font_class": "xunzhang",
+      "unicode": "ecb1",
+      "unicode_decimal": 60593
+    },
+    {
+      "icon_id": "20384540",
+      "name": "链接",
+      "font_class": "lianjie",
+      "unicode": "ecb2",
+      "unicode_decimal": 60594
+    },
+    {
+      "icon_id": "20384547",
+      "name": "天气",
+      "font_class": "tianqi",
+      "unicode": "ecb3",
+      "unicode_decimal": 60595
+    },
+    {
+      "icon_id": "20384549",
+      "name": "保存",
+      "font_class": "baocun",
+      "unicode": "ecb4",
+      "unicode_decimal": 60596
+    }
+  ]
+}

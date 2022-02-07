@@ -1,0 +1,7 @@
+:fullscreen {
+
+}
+.active {
+  user-select: none;
+  transition: all 2s linear;
+}
