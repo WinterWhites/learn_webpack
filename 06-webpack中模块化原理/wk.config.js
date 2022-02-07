@@ -17,7 +17,6 @@ const config = {
 	output: {
 		path: path.resolve(__dirname, './build'),
 		filename: 'js/index.js',
-		// assetModuleFilename: 'img/[name].[hash:6][ext]'
 	},
 	mode: 'development',
 	module: {
