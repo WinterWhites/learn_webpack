@@ -13,13 +13,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
  * @type {Configuration}
  */
 const config = {
-	entry: './src/esmodule-index.js',
+	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, './build'),
 		filename: 'js/index.js',
 	},
 	mode: 'development',
-	devtool: 'source-map',
+	devtool: 'cheap-module-source-map',
 	module: {
 		rules: [
 			{
@@ -67,6 +67,17 @@ const config = {
 				generator: {
 					filename: 'font/[name].[hash:6][ext]'
 				}
+			},
+			{
+				test: /\.js$/,
+				use: [
+					{
+						loader: 'babel-loader',
+						options: {
+							// presets: [require('@babel/preset-env')]
+						}
+					}
+				]
 			}
 		],
 	},

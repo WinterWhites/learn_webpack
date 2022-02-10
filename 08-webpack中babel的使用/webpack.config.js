@@ -1,25 +1,23 @@
 // import { Configuration } from 'webpack';
 const path = require('path');
 
-const { DefinePlugin } = require('webpack')
+const { DefinePlugin } = require('webpack');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
-
 /**
  * @type {Configuration}
  */
 const config = {
-	entry: './src/esmodule-index.js',
+	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, './build'),
 		filename: 'js/index.js',
 	},
 	mode: 'development',
-	devtool: 'source-map',
+	devtool: 'cheap-module-source-map',
 	module: {
 		rules: [
 			{
@@ -57,36 +55,44 @@ const config = {
 				},
 				parser: {
 					dataUrlCondition: {
-						maxSize: 100 * 1024
-					}
-				}
+						maxSize: 100 * 1024,
+					},
+				},
 			},
 			{
 				test: /\.(ttf|eot|woff2?)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'font/[name].[hash:6][ext]'
-				}
-			}
+					filename: 'font/[name].[hash:6][ext]',
+				},
+			},
+			{
+				test: /\.js$/,
+				use: [
+					{
+						loader: 'babel-loader',
+					},
+				],
+			},
 		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'test_webpack',
-			template: './public/index.html'
+			template: './public/index.html',
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
 				{
 					from: 'public',
 					globOptions: {
-						ignore: ['**/index.html', '**/DS_Store', '**/star.png']
-					}
-				}
-			]
-		})
-	]
+						ignore: ['**/index.html', '**/DS_Store', '**/star.png'],
+					},
+				},
+			],
+		}),
+	],
 };
 
 module.exports = config;
