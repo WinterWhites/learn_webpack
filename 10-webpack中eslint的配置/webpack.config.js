@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
  * @type {Configuration}
  */
 const config = {
-	entry: './src/react.index.jsx',
+	entry: './src/main.js',
 	output: {
 		path: path.resolve(__dirname, './build'),
 		filename: 'js/index.js',
@@ -75,6 +75,13 @@ const config = {
 					},
 				],
 			},
+			{
+				test: /\.ts$/,
+				exclude: /node_modules/,
+				use: [
+					{loader: 'ts-loader'}
+				]
+			}
 		],
 	},
 	plugins: [
